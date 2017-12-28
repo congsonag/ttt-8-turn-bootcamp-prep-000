@@ -7,29 +7,30 @@ def display_board(board)
 end
 
 def input_to_index(str)
-  str.chomp.to_i - 1
+  str.to_i - 1
 end
 
-def valid_move?(board, index)
-  index.between?(0, 8) && !position_taken?(board, index)
+def position_taken?(board, position)
+  ['X', 'O'].include?(board[position])
 end
 
-def position_taken?(board, index)
-  !['', ' ', nil].include?(board[index])
+def valid_move?(board, input)
+  index = input_to_index(input)
+  index.between?(0,8) && !position_taken?(board, index)
 end
 
 def move(board, index, token='X')
-    board[index] = token
+  board[index] = token
 end
 
 def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.chomp
-  index = input_to_index(input)
-  if valid_move?(board, index)
+  puts 'Please enter 1-9:'
+  if valid_move?(board,gets)
+    index = input_to_index(gets)
     move(board, index)
     display_board(board)
   else
     turn(board)
   end
+
 end

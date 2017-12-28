@@ -14,6 +14,6 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(index)
 end
 
-def position_taken?(position)
-  !['O', 'X'].include?(position)
+def position_taken?(board, position)
+  ['X', 'O'].include?(board[position])
 end

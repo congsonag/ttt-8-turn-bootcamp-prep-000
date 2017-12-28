@@ -7,7 +7,7 @@ def display_board(board)
 end
 
 def input_to_index(str)
-  str.to_i - 1
+  str.chomp.to_i - 1
 end
 
 def position_taken?(board, position)
@@ -15,7 +15,7 @@ def position_taken?(board, position)
 end
 
 def valid_move?(board, input)
-  index = input_to_index(input.chomp)
+  index = input_to_index(input)
   index.between?(0,8) && !position_taken?(board, index)
 end
 

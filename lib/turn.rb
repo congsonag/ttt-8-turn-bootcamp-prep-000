@@ -15,7 +15,7 @@ def position_taken?(board, position)
 end
 
 def valid_move?(board, input)
-  index = input_to_index(input)
+  index = input_to_index(input.chomo)
   index.between?(0,8) && !position_taken?(board, index)
 end
 

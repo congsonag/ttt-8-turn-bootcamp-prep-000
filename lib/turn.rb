@@ -7,10 +7,11 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  if input.type = Fixnum
-    input - 1
-  else
+  if input.is_a? String
     input.chomp.to_i - 1
+  else
+    input - 1
+    
   end
 end
 

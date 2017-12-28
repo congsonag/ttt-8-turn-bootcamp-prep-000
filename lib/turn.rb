@@ -7,6 +7,6 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  
+  input.chomp.to_i
 
 end

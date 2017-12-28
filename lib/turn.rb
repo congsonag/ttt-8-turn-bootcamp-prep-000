@@ -7,7 +7,7 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  if input.class = Fixnum
+  if input.type = Fixnum
     input - 1
   else
     input.chomp.to_i - 1

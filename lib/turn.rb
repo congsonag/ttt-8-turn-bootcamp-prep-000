@@ -11,7 +11,6 @@ def input_to_index(input)
     input.chomp.to_i - 1
   else
     input - 1
-
   end
 end
 

@@ -17,5 +17,4 @@ end
 
 def position_taken?(position)
   ['O', 'X'].include?(position)
-
 end

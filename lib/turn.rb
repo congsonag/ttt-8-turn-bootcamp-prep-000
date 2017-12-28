@@ -7,7 +7,11 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  input.chomp.to_i - 1
+  if input.class = Fixnum
+    input - 1
+  else
+    input.chomp.to_i - 1
+  end
 end
 
 def valid_move?(board, index)
@@ -24,7 +28,7 @@ end
 
 def turn(board)
   puts 'Please enter 1-9:'
-  input = gets.to_i
+  input = gets.chomp.to_i
   if valid_move?(board, input)
     index = input_to_index(input)
     move(board, index)
